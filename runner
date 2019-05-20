@@ -1,0 +1,8 @@
+#!/bin/bash
+echo starting build
+cd converter-api && ./mvnw install dockerfile:build
+cd ..
+cd converter-ui && docker build -t jsincl4ir/converter-ui .
+cd ..
+cd docker && docker-compose up --detach
+echo jobs done
