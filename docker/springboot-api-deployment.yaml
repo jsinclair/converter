@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: springboot-api
+  name: springboot-api
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: springboot-api
+    spec:
+      containers:
+      - env:
+        - name: AUTH_ENABLED
+          value: "false"
+        - name: AWS_REGION
+          value: local
+        - name: ENVIRONMENT
+          value: local
+        - name: SPRING_PROFILES_ACTIVE
+          value: local
+        image: jsincl4ir/converter-api:latest
+        name: springboot-api
+        ports:
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}

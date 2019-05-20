@@ -1,0 +1,98 @@
+<div>
+  <div>
+    <div class="conversion-div">
+      <div>
+        <span><input #distance type="number" placeholder="Enter Distance" /></span>
+        <span>
+          <select #fromDistance>
+            <option *ngFor="let option of distanceOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <span>
+          <select #toDistance>
+            <option *ngFor="let option of distanceOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <button (click)="convertDistance(distance.value, fromDistance.value, toDistance.value)">Convert Distance</button>
+      </div>
+      <input disabled value="{{distanceValue}}" placeholder="Converted Value"/>
+    </div>
+  </div>
+
+  <div>
+    <div class="conversion-div">
+      <div>
+        <span><input #area type="number" placeholder="Enter Area" /></span>
+        <span>
+          <select #fromArea>
+            <option *ngFor="let option of areaOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <span>
+          <select #toArea>
+            <option *ngFor="let option of areaOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <button (click)="convertArea(area.value, fromArea.value, toArea.value)">Convert Area</button>
+      </div>
+      <input disabled value="{{areaValue}}" placeholder="Converted Value"/>
+    </div>
+  </div>
+
+  <div>
+    <div class="conversion-div">
+      <div>
+        <span><input #volume type="number" placeholder="Enter Volume" /></span>
+        <span>
+          <select #fromVolume>
+            <option *ngFor="let option of volumeOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <span>
+          <select #toVolume>
+            <option *ngFor="let option of volumeOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <button (click)="convertVolume(volume.value, fromVolume.value, toVolume.value)">Convert Volume</button>
+      </div>
+      <input disabled value="{{volumeValue}}" placeholder="Converted Value"/>
+    </div>
+  </div>
+
+  <div>
+    <div class="conversion-div">
+      <div>
+        <span><input #mass type="number" placeholder="Enter Mass" /></span>
+        <span>
+          <select #fromMass>
+            <option *ngFor="let option of massOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <span>
+          <select #toMass>
+            <option *ngFor="let option of massOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <button (click)="convertMass(mass.value, fromMass.value, toMass.value)">Convert Mass</button>
+      </div>
+      <input disabled value="{{massValue}}" placeholder="Converted Value"/>
+    </div>
+  </div>
+
+  <div>
+    <div class="conversion-div">
+      <div>
+        <span><input #temperature type="number" placeholder="Enter Temperature" /></span>
+        <span>
+          <select #fromTemperature (change)="fromTempChanged(temperature.value, fromTemperature.value)">
+            <option *ngFor="let option of temperatureOptions" value="{{option.key}}">{{option.label}}</option>
+          </select>
+        </span>
+        <button (click)="convertTemperature(temperature.value, fromTemperature.value)">Convert Temperature</button>
+      </div>
+      <input disabled value="{{temperatureValue}}" placeholder="Converted Value"/> {{temperatureValueLabel}}
+    </div>
+  </div>
+
+  <button (click)=logout()>Log Out</button>
+</div>

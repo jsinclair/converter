@@ -1,0 +1,13 @@
+<div>
+  <div class="panel">
+    <div class="form-div">
+      <span>Username: <input #username id="username" placeholder="Username" /></span>
+    </div>
+    <div class="form-div">
+      <span>Password: <input #password id="password" type="password" placeholder="Password" /></span>
+    </div>
+    <button (click)="login(username.value, password.value)">Log In</button>
+  </div>
+
+  <h4 *ngIf="error">{{error}}</h4>
+</div>

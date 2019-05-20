@@ -1,0 +1,17 @@
+.conversion-div {
+  margin-top: 15px;
+  background-color: #7774;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.conversion-div span {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.conversion-div, div {
+  margin-bottom: 5px;
+}
