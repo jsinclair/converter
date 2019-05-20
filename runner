@@ -1,8 +1,11 @@
 #!/bin/bash
 echo starting build
+echo building spring api
 cd converter-api && ./mvnw install dockerfile:build
 cd ..
+echo building angular ui
 cd converter-ui && docker build -t jsincl4ir/converter-ui .
 cd ..
+echo launching the docker images
 cd docker && docker-compose up --detach
 echo jobs done
